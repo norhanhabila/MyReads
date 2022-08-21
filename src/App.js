@@ -19,7 +19,6 @@ function App() {
     getBooks();
   }, []);
 
-  console.log(books);
   const handleshelfChange = useCallback(
     async (e, selectBook) => {
       const { value } = e.target;
