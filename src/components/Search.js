@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Book from "./Book";
+import PropTypes from "prop-types";
 
 const Search = ({
   books,
   search,
   handleSearch,
   searchBooks,
-  Book,
   handleshelfChange,
 }) => {
   return (
@@ -51,3 +52,11 @@ const Search = ({
 };
 
 export default Search;
+
+Search.propTypes = {
+  books: PropTypes.array,
+  search: PropTypes.string,
+  handleSearch: PropTypes.func,
+  searchBooks: PropTypes.array,
+  handleshelfChange: PropTypes.func,
+};

@@ -1,5 +1,7 @@
 import React from "react";
 import BookShelf from "./BookShelf";
+import PropTypes from "prop-types";
+
 const ListBooksContent = ({ books, changeBookShelf }) => {
   return (
     <div className="list-books-content">
@@ -18,3 +20,8 @@ const ListBooksContent = ({ books, changeBookShelf }) => {
   );
 };
 export default ListBooksContent;
+
+ListBooksContent.propTypes = {
+  books: PropTypes.array,
+  changeBookShelf: PropTypes.func,
+};

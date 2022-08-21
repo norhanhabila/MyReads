@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const BookShelfChanger = ({ shelf, book, changeBookShelf }) => {
   return (
@@ -21,3 +22,9 @@ const BookShelfChanger = ({ shelf, book, changeBookShelf }) => {
   );
 };
 export default BookShelfChanger;
+
+BookShelfChanger.propTypes = {
+  shelf: PropTypes.string,
+  book: PropTypes.object,
+  changeBookShelf: PropTypes.func,
+};

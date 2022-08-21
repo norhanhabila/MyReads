@@ -1,6 +1,7 @@
 import React from "react";
 import BookCover from "./BookCover";
 import BookShelfChanger from "./BookShelfChanger";
+import PropTypes from "prop-types";
 
 const Book = ({ shelf, book, changeBookShelf }) => {
   return (
@@ -19,3 +20,9 @@ const Book = ({ shelf, book, changeBookShelf }) => {
   );
 };
 export default Book;
+
+Book.propTypes = {
+  shelf: PropTypes.string,
+  book: PropTypes.object,
+  changeBookShelf: PropTypes.func,
+};

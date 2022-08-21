@@ -1,5 +1,7 @@
 import React from "react";
 import Book from "./Book";
+import PropTypes from "prop-types";
+
 const BookShelf = ({ shelf, books, changeBookShelf }) => {
   //Currently Reading  Read
 
@@ -26,3 +28,9 @@ const BookShelf = ({ shelf, books, changeBookShelf }) => {
   );
 };
 export default BookShelf;
+
+BookShelf.propTypes = {
+  shelf: PropTypes.string,
+  books: PropTypes.array,
+  changeBookShelf: PropTypes.func,
+};

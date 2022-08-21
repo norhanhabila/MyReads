@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 const BookCover = ({ book }) => {
   return (
     <div
@@ -12,3 +13,6 @@ const BookCover = ({ book }) => {
   );
 };
 export default BookCover;
+BookCover.propTypes = {
+  book: PropTypes.object,
+};
