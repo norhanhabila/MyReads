@@ -19,6 +19,7 @@ function App() {
     getBooks();
   }, []);
 
+  console.log(books);
   const handleshelfChange = useCallback(
     async (e, selectBook) => {
       const { value } = e.target;
@@ -61,6 +62,7 @@ function App() {
         path="/search"
         element={
           <Search
+            books={books}
             search={search}
             handleSearch={handleSearch}
             searchBooks={searchBooks}

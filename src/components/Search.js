@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Search = ({
+  books,
   search,
   handleSearch,
   searchBooks,
@@ -28,7 +29,16 @@ const Search = ({
           <ol className="books-grid">
             {searchBooks !== undefined && search !== "" ? (
               searchBooks.map((book) => {
-                return <Book book={book} changeBookShelf={handleshelfChange} />;
+                const searchBook = books.find((b) => b.id === book.id);
+
+                return (
+                  <Book
+                    key={book.id}
+                    shelf={searchBook ? searchBook.shelf : "none"}
+                    book={book}
+                    changeBookShelf={handleshelfChange}
+                  />
+                );
               })
             ) : (
               <></>

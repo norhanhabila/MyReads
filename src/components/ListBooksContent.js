@@ -4,16 +4,16 @@ const ListBooksContent = ({ books, changeBookShelf }) => {
   return (
     <div className="list-books-content">
       <BookShelf
-        id="currentlyReading"
+        shelf="currentlyReading"
         books={books}
         changeBookShelf={changeBookShelf}
       />
       <BookShelf
-        id="wantToRead"
+        shelf="wantToRead"
         books={books}
         changeBookShelf={changeBookShelf}
       />
-      <BookShelf id="read" books={books} changeBookShelf={changeBookShelf} />
+      <BookShelf shelf="read" books={books} changeBookShelf={changeBookShelf} />
     </div>
   );
 };
