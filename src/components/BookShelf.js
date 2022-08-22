@@ -13,13 +13,12 @@ const BookShelf = ({ shelf, books, changeBookShelf }) => {
         <ol className="books-grid">
           {books.map((book) =>
             book.shelf === shelf ? (
-              <li key={book.id}>
-                <Book
-                  shelf={shelf}
-                  book={book}
-                  changeBookShelf={changeBookShelf}
-                />
-              </li>
+              <Book
+                key={book.id}
+                shelf={shelf}
+                book={book}
+                changeBookShelf={changeBookShelf}
+              />
             ) : null
           )}
         </ol>

@@ -23,25 +23,19 @@ function App() {
   const handleshelfChange = useCallback(
     async (e, selectBook) => {
       const { value } = e.target;
+      console.log(selectBook);
       await BooksAPI.update(selectBook, value);
-      if (selectBook.shelf) {
+
+      if (books.find((book) => book.id === selectBook.id)) {
         const updatedBooks = books.map((book) => {
-          return book.id === selectBook.id
-            ? { ...book, shelf: value }
-            : { ...book };
+          return book.id === selectBook.id ? { ...book, shelf: value } : book;
         });
         setBooks(updatedBooks);
       } else {
         const searchBook = searchBooks.find(
           (book) => book.id === selectBook.id
         );
-        setBooks((book) => {
-          return [{ ...searchBook, shelf: value }, ...book].map((book) => {
-            return book.id === selectBook.id
-              ? { ...book, shelf: value }
-              : { ...book };
-          });
-        });
+        setBooks((books) => [{ ...searchBook, shelf: value }, ...books]);
       }
     },
     [books, searchBooks]
